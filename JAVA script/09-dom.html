@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+    </head>
+    <body>
+        <style>
+            .button{
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 30px;
+                width: 80px;
+                margin-top: 150px;
+                margin-left: 150px;
+            }
+            .buton{
+                background-color: black;
+                color: white;
+                width: 80px;
+                height: 30px;
+                border: none;
+                font-size: small;
+            }
+            .buton:hover{
+                cursor: pointer;
+                background-color: rgb(66, 66, 66);
+            }
+        </style>
+        <dev class="button">
+            <button class="buton">
+                 hello
+            </button>
+        </dev>
+        
+        <dev class="button">
+            <button class="buton">
+                 Byee
+            </button>
+        </dev>
+        <script>
+           console.log( document.querySelector('button').innerHTML);
+            document.querySelector('button')
+             .innerHTML='changed';
+             const butonElement=document.querySelector('.buton');
+             console.log(butonElement);
+            /*
+            console.log(document.title);
+            document.title='hello';
+            console.log(document.body);
+            console.log(document.body.innerHTML);
+            document.body.innerHTML='<button>this is button </button>';*/
+         /* document.body.innerHTML='hello';
+          document.title='good morning';
+            */
+            
+        </script>
+    </body>
+</html>

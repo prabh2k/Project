@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cart quantity</title>
+    </head>
+    <body>
+        
+        <div class=" text">
+            <p>Cart Quantity</p>
+        </div>
+        <div class="buttons">
+            <button onclick="
+                console.log(`cart quantity: ${cartQuantity}`);
+                ">Show Quantity</button>
+            <button onclick="
+                cartQuantity ++;
+                console.log(`cart quantity: ${cartQuantity}`);
+                "> Add to Cart</button>
+            <button onclick="
+                cartQuantity += 2;
+                console.log(`cart quantity: ${cartQuantity}`);
+                ">+2</button>
+            <button onclick="
+                cartQuantity +=3;
+                console.log(`cart quantity: ${cartQuantity}`);
+                ">+3</button>
+            <button onclick="
+                cartQuantity=cartQuantity-cartQuantity;
+                console.log('cart was reset');
+                console.log(`cart quantity: ${cartQuantity}`);
+                ">Reset Cart</button>
+        </div>
+
+        
+        <script>
+            let cartQuantity = 0;
+             const randomnumber=Math.random();
+             console.log(randomnumber);
+        </script>
+    </body>
+</html>

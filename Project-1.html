@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            .subscribe-button{
+                font-family: Roboto,Arial;
+                background-color: black;
+                color: white;
+                padding: 10px;
+                padding-right: 15px;
+                padding-left: 15px;
+                font-size: small;
+                font-weight: bold;
+                border-radius: 35px;
+                cursor: pointer;
+                border: none;
+                font-size: 20px;
+                margin-bottom: 30px;
+                margin-top: 0;
+            }
+            .subscribed{
+                background-color: rgb(219, 217, 217);
+                color: black;
+               
+            }
+            body{
+                font-family: Roboto,Arial;
+                font-size: 40px;
+                
+            }
+            .info{
+                font-size: 20px;
+                margin-top: 10px;
+            }
+            .cost-input{
+                font-size: 15px;
+                padding: 10px 15px 10px 10px;
+                
+            }
+            .calculate-button{
+                background-color: green;
+                color: white;
+                border: none;
+                padding: 10px 17px;
+                font-size: 18px;
+                margin-top: 10px;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                
+                
+                align-items: center;
+                vertical-align: center;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+       <p style="margin-bottom: 0;" >Youtube Subscibe Button</p>
+       <button onclick="
+            SUBSCRIBE();
+           "class="js-button subscribe-button">SUBSCRIBE</button>
+           <p>Amazon Shipping Calculator</p>
+           <p class="info">Orders under $50 = +$10 Shipping
+           </p>
+           <p class="info">Orders above $50 = Free Shipping</p>
+           <input placeholder="Cost of order" class="js-input cost-input" onkeydown="
+                costkey(event); 
+                ">
+           <button onclick="
+                calculate();" class="calculate-button">Calculate</button>
+                <p class="js-total "></p>
+        </div>
+       
+        <script>
+            function costkey(event){
+                if(event.key==='Enter'){
+                    calculate();}
+            }
+            function calculate() {
+                const inputeElement= document.querySelector('.js-input');
+                let cost=Number(inputeElement.value);
+                if(cost<50){
+                    cost=cost+10;
+                }
+                
+                document.querySelector('.js-total').innerHTML=`$${cost}`;
+            }
+            function SUBSCRIBE(){
+                 const buttonElement=(document.querySelector('.js-button'));
+            if(buttonElement.innerText==='SUBSCRIBE'){
+                buttonElement.innerHTML='SUBSCRIBED';
+                buttonElement.classList.add('subscribed');
+            }else{
+                buttonElement.innerHTML='SUBSCRIBE';
+                buttonElement.classList.remove('subscribed');
+            }
+
+            }
+        </script>
+    </body>
+</html>
